@@ -1,0 +1,12 @@
+= link_to board_path(board) do
+  .board
+    .board_title
+      = board.title
+    .board_content 
+      = board.content
+    .board_username
+      = board.user.username
+    .board_edit
+      = link_to '編集', edit_board_path(board)
+    .board_delete
+      = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }

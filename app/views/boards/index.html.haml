@@ -1,1 +1,5 @@
-トップだよ
+%p All Board 
+- @boards.each do |board|
+  = render 'commons/board', board: board
+%div 
+  = link_to 'New Board',  new_board_path
