@@ -6,11 +6,12 @@
 %p All Tasks
 
 - @tasks.each do |task|
-  .task_title
-    = task.title
-  .task_content
-    = task.content 
-  .task_deadline
-    = task.deadline
+  = link_to board_task_path(board_id: task.board_id, id: task.id) do
+    .task_title
+      = task.title
+    .task_content
+      = task.content 
+    .task_deadline
+      = task.deadline
 .new_task_link
 = link_to 'Task作成ページへ', new_board_task_path(@board)
