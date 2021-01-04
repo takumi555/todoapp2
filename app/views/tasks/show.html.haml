@@ -8,6 +8,8 @@
 = link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), { method: 'delete', confirm: '本当によろしいですか？' }
 
 %p コメント一覧
+- @comments.each do |comment|
+  = comment.content
 
 
-%p コメント投稿
+= link_to 'コメント投稿', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id)
