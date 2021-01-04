@@ -1,0 +1,13 @@
+- if @task.image&.attached?
+  = image_tag @task.image
+= @task.title
+= @task.content
+= @task.deadline
+
+= link_to '編集', edit_board_task_path(board_id: @task.board_id, id: @task.id)
+= link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), { method: 'delete', confirm: '本当によろしいですか？' }
+
+%p コメント一覧
+
+
+%p コメント投稿

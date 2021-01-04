@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   
   def index
     @boards = Board.all
@@ -20,6 +21,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @tasks = @board.tasks
   end
 
   def edit
