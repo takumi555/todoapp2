@@ -1,0 +1,8 @@
+= link_to board_path(board) do
+  .board
+    .board_title
+      = board.title
+    .board_content 
+      = board.content
+    .board_username
+      = board.user.username
