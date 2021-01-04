@@ -8,6 +8,9 @@
 = link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), { method: 'delete', confirm: '本当によろしいですか？' }
 
 %p コメント一覧
+- @comments.each do |comment|
+  = comment.content
+  = link_to '削除', board_task_comment_path(board_id: comment.task.board_id,task_id: comment.task_id, id: comment.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
 
-
-%p コメント投稿
+%div
+  = link_to 'コメント投稿', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id)
