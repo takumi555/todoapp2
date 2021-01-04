@@ -8,3 +8,5 @@
       = board.user.username
     .board_edit
       = link_to '編集', edit_board_path(board)
+    .board_delete
+      = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
