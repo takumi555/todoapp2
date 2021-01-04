@@ -1,3 +1,5 @@
+- if @task.image&.attached?
+  = image_tag @task.image
 = @task.title
 = @task.content
 = @task.deadline
