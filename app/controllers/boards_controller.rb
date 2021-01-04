@@ -6,7 +6,6 @@ class BoardsController < ApplicationController
 
   def new
     @board = current_user.boards.build
-
   end
 
   def create
@@ -17,12 +16,25 @@ class BoardsController < ApplicationController
       flash.now[:error] = '登録できませんでした'
       render :new
     end
-    end
+  end
+
+  def show
+    @board = Board.find(params[:id])
+  end
 
   def edit
+    @board = Board.find(params[:id])
   end
 
   def update
+    @board = Board.find(params[:id])
+    if @board.update(board_params)
+      redirect_to boards_path, notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
+
   end
 
   def destroy
@@ -32,4 +44,6 @@ class BoardsController < ApplicationController
   def board_params
     params.require(:board).permit(:title, :content)
   end
+
+ 
 end
