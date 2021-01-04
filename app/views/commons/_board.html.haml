@@ -6,7 +6,9 @@
       = board.content
     .board_username
       = board.user.username
-    .board_edit
-      = link_to '編集', edit_board_path(board)
-    .board_delete
-      = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
+    .board_edit_cotainer
+      - if user_signed_in?
+        .board_edit
+          = link_to '編集', edit_board_path(board)
+        .board_delete
+          = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }

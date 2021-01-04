@@ -1,0 +1,16 @@
+%p Task作成ページ
+= form_with(model: @task, url: board_tasks_path(@board.id),method: 'post', local: true) do |f|
+  %div
+    = f.label :title, 'Title'
+  %div
+    = f.text_field :title
+  %div 
+    = f.label :content
+  %div
+    = f.text_field :content
+  %div 
+    = f.label :deadline
+  %div
+    = f.date_field :deadline
+  %div
+    = f.submit 'SUBMIT', class: 'btn btn-secondary'
