@@ -1,6 +1,10 @@
 %p プロフィール編集ページ
 .profile_avatar
-  = image_tag @profile.avatar, class: 'profile_avatar'
+  - if @profile&.avatar&.attached?
+    = image_tag @profile.avatar, class: 'profile_avatar'
+  - else 
+    = image_tag '人物.png'
+
 .profile_edit_form
   = form_with(model: @profile, url: profile_path, method: 'put', local: true ) do |f|
     %div

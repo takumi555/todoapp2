@@ -7,7 +7,23 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
-    %p.notice= notice
-    %p.alert= alert
+    %header
+      .header_left
+        %p.header_title Boards
+      .header_right
+        - if user_signed_in?
+          = link_to edit_profile_path, data: {confirm: 'アバター画像を変更しますか？' } do
+            - if current_user.profile&.avatar&.attached?
+              = image_tag current_user.profile.avatar, class: 'header_usericon'
+            - else 
+              = image_tag 'アヒル.png', class: 'header_usericon'
+      .clear
+      - if flash[:notice]
+        .flash_message
+          %p.notice= notice
+      - if flash[:alert]
+        .flash_message
+          %p.alert= alert
     = yield
