@@ -25,7 +25,11 @@
 }
 
 body {
+  text-decoration: none;
  
+}
+a:hover {
+  text-decoration: none;
 }
 
 header {
@@ -54,5 +58,12 @@ header {
   clear: both;
 }
 
+.logout_link {
+  float: right;
+  font-size: 11px;
+  color: black;
+  opacity: 0.5;
+  margin-right: px;
+}
 
  @import "bootstrap";

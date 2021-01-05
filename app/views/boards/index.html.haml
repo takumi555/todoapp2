@@ -1,9 +1,11 @@
-%p All Board 
-- @boards.each do |board|
-  = render 'commons/board', board: board
-%div 
-  = link_to 'New Board',  new_board_path
-%div
-  = link_to 'プロフィール編集ページへ',edit_profile_path
-%div
-  = link_to 'ログアウト', destroy_user_session_path
+.container
+  %p.board_head_title All Board 
+  - @boards.each do |board|
+    = render 'commons/board', board: board
+
+  .new_board_link
+    = link_to new_board_path do
+      %p.new_board_text Add new board
+  
+  %div
+    = link_to 'ログアウト', destroy_user_session_path, class: 'logout_link'

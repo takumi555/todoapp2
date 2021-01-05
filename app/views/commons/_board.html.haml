@@ -4,11 +4,13 @@
       = board.title
     .board_content 
       = board.content
+    .board_usericon
+      = image_tag board.user.avatar_image
     .board_username
       = board.user.username
+    
+    .clear
     .board_edit_cotainer
       - if user_signed_in?
-        .board_edit
-          = link_to '編集', edit_board_path(board)
-        .board_delete
-          = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
+        = link_to '編集', edit_board_path(board)    
+        = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
