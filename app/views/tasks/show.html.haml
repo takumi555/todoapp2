@@ -1,16 +1,33 @@
-- if @task.image&.attached?
-  = image_tag @task.image
-= @task.title
-= @task.content
-= @task.deadline
+.container
+  .task_title
+    = @task.title
+  .task_show_image
+    - if @task.image&.attached?
+      = image_tag @task.image
+    
+  .task_content
+    = @task.content
+  .task_deadline
+    %p.deadline_text Deadline :
+    %p.deadline_date= @task.deadline
+  .clear
 
-= link_to '編集', edit_board_task_path(board_id: @task.board_id, id: @task.id)
-= link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), { method: 'delete', confirm: '本当によろしいですか？' }
+  .task_link_container
+    = link_to '編集', edit_board_task_path(board_id: @task.board_id, id: @task.id)
+    = link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), { method: 'delete', confirm: '本当によろしいですか？' }
 
-%p コメント一覧
-- @comments.each do |comment|
-  = comment.content
-  = link_to '削除', board_task_comment_path(board_id: comment.task.board_id,task_id: comment.task_id, id: comment.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
-
-%div
-  = link_to 'コメント投稿', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id)
+  .comment_container
+    %p.comment_head_title Comment
+    - @comments.each do |comment|
+      .comment
+        .comment_avatar
+          = image_tag comment.user.avatar_image
+        .comment_content
+          = comment.content
+        .clear
+        .task_comment_delete
+          = link_to '削除', board_task_comment_path(board_id: comment.task.board_id,task_id: comment.task_id, id: comment.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
+        .clear
+    .new_comment_link
+      = link_to new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id) do 
+        %p.new_comment_text + Add new comment 
