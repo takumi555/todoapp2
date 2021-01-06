@@ -38,12 +38,20 @@ header {
   
 }
 .header_title {
+  text-decoration: none;
+  color: black;
   font-size: 18px;
   padding-left: 20px;
   line-height: 50px;
   margin : auto 0;
   font-weight: normal;
   float: left;
+  
+}
+
+.header_title:hover {
+  text-decoration: none;
+  color: black;
 }
 
 .header_usericon {

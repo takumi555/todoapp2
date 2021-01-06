@@ -11,7 +11,7 @@
   %body
     %header
       .header_left
-        %p.header_title Boards
+        = link_to 'Boards', root_path, class: 'header_title'
       .header_right
         - if user_signed_in?
           = link_to edit_profile_path, data: {confirm: 'アバター画像を変更しますか？' } do
