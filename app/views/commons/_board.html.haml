@@ -2,6 +2,8 @@
   .board
     .board_title
       = board.title
+    = render 'commons/dropbtn', board: board
+    .clear
     .board_content 
       = board.content
     .board_usericon
@@ -10,7 +12,4 @@
       = board.user.username
     
     .clear
-    .board_edit_cotainer
-      - if user_signed_in?
-        = link_to '編集', edit_board_path(board)    
-        = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }
+    

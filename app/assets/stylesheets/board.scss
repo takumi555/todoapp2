@@ -12,7 +12,7 @@
   border-radius: 10px;
   margin-bottom : 20px;
   padding-left: 17px;
-  padding-top: 32px;
+  padding-top: 25px;
   padding-bottom : 20px;
   
   
@@ -20,6 +20,7 @@
     font-size: 18px;
     color: black;
     margin-bottom: 6px;
+    float: left;
     
   }
   .board_content {
@@ -63,14 +64,12 @@
   border-radius: 10px;
   margin-bottom : 20px;
   padding-left: 17px;
-  padding-top: 32px;
-  padding-bottom : 20px;
   text-align: center;
 
 }
 
 .new_board_text {
-  line-height: 120px;
+  line-height: 100px;
   color: black;
   
   

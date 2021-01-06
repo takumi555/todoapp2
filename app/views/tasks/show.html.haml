@@ -1,6 +1,13 @@
 .container
   .task_title
     = @task.title
+  - if user_signed_in?
+    .dropdown
+      = image_tag '点.png', class: 'dropbtn task_show_dropbtn'
+      .dropdown_content.task_show_dropbtn_content
+        = link_to '編集', edit_board_path(@task), class: 'dropbtn_text'   
+        = link_to '削除', board_path(@task), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }, class: 'dropbtn_text'
+  .clear
   .task_show_image
     - if @task.image&.attached?
       = image_tag @task.image

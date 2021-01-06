@@ -1,7 +1,7 @@
 .container 
-  %p.new_comment_title New Comment
+  %p.head_title New Comment
   = form_with(model: @comment, url: board_task_comments_path(board_id: @task.board_id, task_id: @task.id),method: 'post', local: true) do |f|
     %div
       = f.text_field :content, class: 'form'
     %div
-      = f.submit 'SUBMIT', class: 'btn'
+      = f.submit 'Submit', class: 'btn'

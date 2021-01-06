@@ -27,8 +27,20 @@
   font-weight: 500;
   margin-top: 25px;
   margin-bottom:20px;
+  float: left;
 
 }
+
+.task_show_dropbtn {
+  position: relative;
+  top: 27px;
+}
+
+.task_show_dropbtn_content {
+  position: relative;
+  top: 50px;
+}
+
 .task_content {
   background-color: #F4F4F4;
   border-radius: 10px;
@@ -100,6 +112,7 @@
 .comment_avatar img{
   width: 40px;
   float: left;
+  border-radius: 1000px;
 
 }
 
@@ -122,9 +135,20 @@
 
 }
 
-.new_comment_title {
+.head_title {
   font-size: 26px;
   font-weight: 500;
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+
+.task_edit_title {
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom:20px;
+
+
+}
+
