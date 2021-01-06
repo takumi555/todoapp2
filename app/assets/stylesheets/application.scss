@@ -19,6 +19,8 @@
 @import 'login';
 @import 'profile';
 @import 'dropbtn';
+@import 'comment';
+@import 'header';
 
 
 .container {
@@ -33,33 +35,11 @@ a:hover {
   text-decoration: none;
 }
 
-header {
-  border-bottom: 1px solid #2e2d2d6c;
-  
-}
-.header_title {
-  font-size: 18px;
-  padding-left: 20px;
-  line-height: 50px;
-  margin : auto 0;
-  font-weight: normal;
-  float: left;
-}
-
-.header_usericon {
-  float: right;
-  width: 30px;
-  border-radius: 1000px;
-  margin-top : 10px;
-  margin-right: 15px;
- 
-
-}
 .clear {
   clear: both;
 }
 
-.logout_link {
+.session_link a{
   float: right;
   font-size: 11px;
   color: black;

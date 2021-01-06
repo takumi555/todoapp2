@@ -5,7 +5,10 @@
 
   .new_board_link
     = link_to new_board_path do
-      %p.new_board_text Add new board
+      %p.new_board_text + Add new board
   
-  %div
-    = link_to 'ログアウト', destroy_user_session_path, class: 'logout_link'
+  .session_link
+    - if user_signed_in?
+      = link_to 'ログアウト', destroy_user_session_path
+    - else 
+      = link_to 'ログイン', new_user_session_path
