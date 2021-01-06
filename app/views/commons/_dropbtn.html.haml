@@ -1,0 +1,6 @@
+- if user_signed_in?
+  .dropdown
+    = image_tag '点.png', class: 'dropbtn'
+    .dropdown_content
+      = link_to '編集', edit_board_path(board), class: 'dropbtn_text'   
+      = link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }, class: 'dropbtn_text'
