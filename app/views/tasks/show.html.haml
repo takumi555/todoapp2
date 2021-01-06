@@ -5,8 +5,8 @@
     .dropdown
       = image_tag '点.png', class: 'dropbtn task_show_dropbtn'
       .dropdown_content.task_show_dropbtn_content
-        = link_to '編集', edit_board_path(@task), class: 'dropbtn_text'   
-        = link_to '削除', board_path(@task), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }, class: 'dropbtn_text'
+        = link_to '編集', edit_board_task_path(board_id: @task.board_id, id: @task.id), class: 'dropbtn_text'   
+        = link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }, class: 'dropbtn_text'
   .clear
   .task_show_image
     - if @task.image&.attached?
