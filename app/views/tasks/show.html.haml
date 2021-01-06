@@ -18,11 +18,7 @@
     %p.deadline_text Deadline :
     %p.deadline_date= @task.deadline
   .clear
-
-  .task_link_container
-    = link_to '編集', edit_board_task_path(board_id: @task.board_id, id: @task.id)
-    = link_to '削除', board_task_path(board_id: @task.board_id, id: @task.id), { method: 'delete', confirm: '本当によろしいですか？' }
-
+  
   .comment_container
     %p.comment_head_title Comment
     - @comments.each do |comment|
